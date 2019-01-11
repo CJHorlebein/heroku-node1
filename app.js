@@ -6,11 +6,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + "/public"));
-
+var port = process.env.PORT || 8080;
 app.get("/", function(req, res, next) {
     res.json("index sent");
 });
 
-app.listen(3000, function() {
-    console.log("we hear you on " + 3000);
+app.listen(port, function() {
+    console.log("we hear you on " + port);
 });
